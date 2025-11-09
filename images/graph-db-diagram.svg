@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">
+    Graph Database Structure
+  </text>
+  
+  <!-- Edges (drawn first so they appear behind nodes) -->
+  <!-- Alice to Bob: friendOf -->
+  <line x1="150" y1="150" x2="350" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="250" y="140" font-size="14" text-anchor="middle" fill="#666" font-style="italic">friendOf</text>
+  
+  <!-- Bob to Alice: friendOf -->
+  <line x1="350" y1="170" x2="150" y2="170" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="250" y="190" font-size="14" text-anchor="middle" fill="#666" font-style="italic">friendOf</text>
+  
+  <!-- Alice to Coffee Shop: purchased -->
+  <line x1="150" y1="180" x2="150" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="90" y="250" font-size="14" text-anchor="middle" fill="#666" font-style="italic">purchased</text>
+  
+  <!-- Bob to Laptop: purchased -->
+  <line x1="380" y1="180" x2="450" y2="320" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="460" y="250" font-size="14" text-anchor="middle" fill="#666" font-style="italic">purchased</text>
+  
+  <!-- Alice to Seattle: livesIn -->
+  <line x1="120" y1="130" x2="80" y2="440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="50" y="290" font-size="14" text-anchor="middle" fill="#666" font-style="italic">livesIn</text>
+  
+  <!-- Bob to Seattle: livesIn -->
+  <line x1="380" y1="130" x2="120" y2="440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="280" y="320" font-size="14" text-anchor="middle" fill="#666" font-style="italic">livesIn</text>
+  
+  <!-- Coffee Shop to Seattle: locatedIn -->
+  <line x1="130" y1="380" x2="90" y2="460" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="150" y="430" font-size="14" text-anchor="middle" fill="#666" font-style="italic">locatedIn</text>
+  
+  <!-- Carol to Bob: friendOf -->
+  <line x1="600" y1="150" x2="400" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="500" y="140" font-size="14" text-anchor="middle" fill="#666" font-style="italic">friendOf</text>
+  
+  <!-- Carol to Portland: livesIn -->
+  <line x1="630" y1="130" x2="680" y2="440" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="700" y="290" font-size="14" text-anchor="middle" fill="#666" font-style="italic">livesIn</text>
+  
+  <!-- Nodes (Person) -->
+  <circle cx="150" cy="150" r="50" fill="#4A90E2" stroke="#2E5C8A" stroke-width="3" />
+  <text x="150" y="145" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Person</text>
+  <text x="150" y="165" font-size="14" text-anchor="middle" fill="white">Alice</text>
+  
+  <circle cx="375" cy="150" r="50" fill="#4A90E2" stroke="#2E5C8A" stroke-width="3" />
+  <text x="375" y="145" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Person</text>
+  <text x="375" y="165" font-size="14" text-anchor="middle" fill="white">Bob</text>
+  
+  <circle cx="625" cy="150" r="50" fill="#4A90E2" stroke="#2E5C8A" stroke-width="3" />
+  <text x="625" y="145" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Person</text>
+  <text x="625" y="165" font-size="14" text-anchor="middle" fill="white">Carol</text>
+  
+  <!-- Nodes (Product) -->
+  <circle cx="150" cy="360" r="50" fill="#7ED321" stroke="#5A9A19" stroke-width="3" />
+  <text x="150" y="355" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Product</text>
+  <text x="150" y="375" font-size="14" text-anchor="middle" fill="white">Coffee</text>
+  
+  <circle cx="475" cy="360" r="50" fill="#7ED321" stroke="#5A9A19" stroke-width="3" />
+  <text x="475" y="355" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Product</text>
+  <text x="475" y="375" font-size="14" text-anchor="middle" fill="white">Laptop</text>
+  
+  <!-- Nodes (Location) -->
+  <circle cx="100" cy="490" r="50" fill="#F5A623" stroke="#C77D0E" stroke-width="3" />
+  <text x="100" y="485" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Location</text>
+  <text x="100" y="505" font-size="14" text-anchor="middle" fill="white">Seattle</text>
+  
+  <circle cx="700" cy="490" r="50" fill="#F5A623" stroke="#C77D0E" stroke-width="3" />
+  <text x="700" y="485" font-size="16" font-weight="bold" text-anchor="middle" fill="white">Location</text>
+  <text x="700" y="505" font-size="14" text-anchor="middle" fill="white">Portland</text>
+  
+  <!-- Legend -->
+  <rect x="20" y="540" width="760" height="50" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" />
+  <text x="40" y="560" font-size="14" font-weight="bold" fill="#333">Legend:</text>
+  
+  <circle cx="150" cy="565" r="15" fill="#4A90E2" stroke="#2E5C8A" stroke-width="2" />
+  <text x="175" y="570" font-size="13" fill="#333">Person Node</text>
+  
+  <circle cx="300" cy="565" r="15" fill="#7ED321" stroke="#5A9A19" stroke-width="2" />
+  <text x="325" y="570" font-size="13" fill="#333">Product Node</text>
+  
+  <circle cx="460" cy="565" r="15" fill="#F5A623" stroke="#C77D0E" stroke-width="2" />
+  <text x="485" y="570" font-size="13" fill="#333">Location Node</text>
+  
+  <line x1="600" y1="565" x2="650" y2="565" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="660" y="570" font-size="13" fill="#333">Relationship Edge</text>
+</svg>
