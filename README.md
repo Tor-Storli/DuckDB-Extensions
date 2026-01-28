@@ -55,3 +55,12 @@ YouTube Link:<br><br>
 <a href="https://youtu.be/Uew37ledJao">
   <img src="https://i9.ytimg.com/vi/4kYGRwdmU30/mqdefault.jpg?v=68f67733&sqp=COiKncgG&rs=AOn4CLCpAFyYjKN-4gavpJtLX58edpjxdA" alt="flock-Image" width="100" height="75">
 </a>[Watch Video](https://youtu.be/Uew37ledJao)
+
+----
+### Part-7 markdown
+
+In this video we will take a look at the DuckDB Community Extension called Markdown.<br><br>
+YouTube Link:<br><br>
+<a href="https://youtu.be/dAqVU8lM__o">
+  <img src="https://i9.ytimg.com/vi/4kYGRwdmU30/mqdefault.jpg?v=68f67733&sqp=COiKncgG&rs=AOn4CLCpAFyYjKN-4gavpJtLX58edpjxdA" alt="Markdown" width="100" height="75">
+</a>[Watch Video](https://youtu.be/dAqVU8lM__o)
