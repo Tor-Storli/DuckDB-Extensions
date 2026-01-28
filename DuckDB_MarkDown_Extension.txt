@@ -1,0 +1,58 @@
+
+Query 1.
+--------
+--Query All md files starting with P
+SELECT content FROM read_markdown('C:/Users/storl/Go_Lynch_Stock_Analyzer/P*.md');
+
+Query 2.
+--------
+-- Parse into block-level elements (duck_block shape)
+SELECT element_type, content, level
+FROM read_markdown_blocks('C:/Users/storl/Go_Lynch_Stock_Analyzer/Peg_Ratio_Analysis.md')
+ORDER BY element_order;
+
+Query 3.
+--------
+
+-- Extract code blocks from Markdown text
+SELECT cb.language, cb.code
+FROM (SELECT UNNEST(md_extract_code_blocks('```r
+print("Greetings!")
+````')) as cb);
+
+-- Extract code blocks from Markdown text
+SELECT cb.language, cb.code
+FROM (SELECT UNNEST(md_extract_code_blocks('```python
+print("Hello Markdown")
+````')) as cb);
+
+Query 4.
+--------
+CREATE TABLE IF NOT EXISTS Names (id INT, Name Varchar);
+
+INSERT INTO Names VALUES(1, 'Tor');
+INSERT INTO Names VALUES(2, 'Sandy');
+INSERT INTO Names VALUES(3, 'Fred');
+INSERT INTO Names VALUES(4, 'Gary');
+
+-- Export query results as Markdown table
+COPY (SELECT * FROM Names) TO 'C:\temp\MarkDown-Output.md' (FORMAT MARKDOWN);
+
+Query 5.
+--------
+--File can be inspected here:  https://markdown-it.github.io/
+
+SELECT 
+  len(md_extract_code_blocks(content)) as code_examples,
+  len(md_extract_links(content)) as external_links,
+  len(md_extract_images(content)) as images
+FROM read_markdown('C:/Users/storl/Go_Lynch_Stock_Analyzer/MD_Demo.md');
+
+Query 6.
+--------
+-- Round-trip: read blocks, transform, write back
+COPY (
+  SELECT kind, element_type, content, level, encoding, attributes
+  FROM read_markdown_blocks('C:/Users/storl/Go_Lynch_Stock_Analyzer/Peg_Ratio_Analysis.md')
+) TO 'c:\temp\Peg_Ratio_Analysis_copy.md' (FORMAT MARKDOWN, markdown_mode 'blocks');
+
